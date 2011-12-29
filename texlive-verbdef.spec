@@ -17,8 +17,6 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
 
 %description
 The package defines a single command \verbdef (which has a *-
@@ -29,20 +27,12 @@ commands; since the defined command is robust, it doesn't
 matter if the argument is moving. (Full details of syntax and
 caveats about use are in comments in the file itself.).
 
-%pre
-    %_texmf_mktexlsr_pre
-
 %post
-    %_texmf_mktexlsr_post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
-    fi
+    %{_sbindir}/texlive.post
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -50,7 +40,6 @@ caveats about use are in comments in the file itself.).
 %{_texmfdistdir}/tex/latex/verbdef/verbdef.sty
 %doc %{_texmfdistdir}/doc/latex/verbdef/verbdef.pdf
 %doc %{_texmfdistdir}/doc/latex/verbdef/verbdef.tex
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -61,5 +50,3 @@ caveats about use are in comments in the file itself.).
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
