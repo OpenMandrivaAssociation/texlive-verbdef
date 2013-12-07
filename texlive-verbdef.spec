@@ -6,7 +6,7 @@
 # catalog-version 0.2
 Name:		texlive-verbdef
 Version:	0.2
-Release:	4
+Release:	5
 Summary:	Define commands which expand to verbatim text
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/verbdef
