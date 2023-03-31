@@ -1,6 +1,6 @@
 Name:		texlive-verbdef
 Version:	17177
-Release:	1
+Release:	2
 Summary:	Define commands which expand to verbatim text
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/verbdef
