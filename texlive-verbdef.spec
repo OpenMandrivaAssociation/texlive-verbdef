@@ -3,7 +3,7 @@ Version:	17177
 Release:	2
 Summary:	Define commands which expand to verbatim text
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/verbdef
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/verbdef
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/verbdef.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/verbdef.doc.r%{version}.tar.xz
